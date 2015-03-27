@@ -3,9 +3,9 @@ Example at http://francoislaubscher.com/fishy-sim/
 I was given a task at work a while back to create a simple simulator.
 
 In this simulator three objects exist namely:
-Fish
-Foodsource (Coral or whatever you want)
-Sharks
+> Fish
+> Foodsource (Coral or whatever you want)
+> Sharks
 
 Fish need to move around and have simple grouping behaviour.
 If they move around, they lose a small amount of "energy".
