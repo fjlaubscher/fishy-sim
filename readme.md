@@ -1,5 +1,3 @@
-Example at http://francoislaubscher.com/fishy-sim/
-
 I was given a task at work a while back to create a simple simulator.
 
 In this simulator three objects exist namely:
