@@ -9,8 +9,8 @@ export const FISH_COLOR = '#E09967'
 
 export const SHARK_WIDTH = 45
 export const SHARK_HEIGHT = 100
-export const SHARK_COLOR = '#F08080'
+export const SHARK_COLOR = '#333333'
 
 export const FOODSOURCE_WIDTH = 40
 export const FOODSOURCE_HEIGHT = 40
-export const FOODSOURCE_COLOR = '#333333'
+export const FOODSOURCE_COLOR = '#F08080'

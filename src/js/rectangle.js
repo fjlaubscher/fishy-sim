@@ -4,19 +4,27 @@ class Rectangle {
     this.y = y || y
     this.width = width || 0
     this.height = height || 0
-
-    this.left = this.x;
-    this.top = this.y;
-    this.right = this.x + this.width;
-    this.bottom = this.y + this.height;
+  }
+  get left () {
+    return this.x
+  }
+  get top () {
+    return this.y
+  }
+  get right () {
+    return this.x + this.width
+  }
+  get bottom () {
+    return this.y + this.height
   }
   intersectsWith (rectB) {
-    if (this.x < rectB.x + rectB.width && this.x + this.width > rectB.x &&
-        this.y < rectB.y + rectB.height && this.y + this.height > rectB.y) {
+    if (this.x < rectB.x + rectB.width && 
+        this.x + this.width > rectB.x &&
+        this.y < rectB.y + rectB.height && 
+        this.y + this.height > rectB.y) {
       // collision detected!
       return true
     }
-
     return false
   }
 }

@@ -45,7 +45,7 @@ function start () {
     food.draw(context, FOODSOURCE_COLOR)
 	}
 
-	setInterval(tmrTick, 40)
+	window.setInterval(tmrTick, 40)
 }
 
 // timer tick event
@@ -82,7 +82,7 @@ function tmrTick () {
 				// basic schooling
 				for (var j = 0; j < fishArray.length; j++) {
 					if (fishArray[i].position.intersectsWith(fishArray[j].position)){
-						fishArray[j].setAngle(fishArray[i].angle)
+						fishArray[j].setAngle(fishArray[i].movementAngle)
 					}
 				}
 

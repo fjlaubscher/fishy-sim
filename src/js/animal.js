@@ -3,7 +3,8 @@ import { random } from './helpers'
 
 class Animal {
   constructor (canvas, x, y, width, height) {
-    this.canvas = canvas
+    this.canvasWidth = canvas.width
+    this.canvasHeight = canvas.height
     this.x = x
     this.y = y
     this.width = width
@@ -13,7 +14,6 @@ class Animal {
     this.energy = random(100, 250)
     this.movementAngle = random(0, 3600) / 10
     this.speed = random(50, 100) / 10
-    this.angle = 0.0
   }
   setAngle (angle) {
     if (angle >= 0 && angle <=360){
@@ -24,9 +24,12 @@ class Animal {
     return (Math.PI / 180) * (this.movementAngle - 90)
   }
   move () {
-    const direction = new Rectangle(Math.cos(this.rotationAngle()), Math.sin(this.rotationAngle()))
-    this.position.x += direction.x * this.speed;
-    this.position.y +=  direction.y * this.speed;
+    const direction = { 
+      x: Math.cos(this.rotationAngle()), 
+      y: Math.sin(this.rotationAngle()) 
+    }
+    this.position.x += direction.x * this.speed
+    this.position.y +=  direction.y * this.speed
 
     // check top
     if (this.position.top < 0){
@@ -34,7 +37,7 @@ class Animal {
     }
 
     // check bottom
-    if (this.position.bottom > this.canvas.height) {
+    if (this.position.bottom > this.canvasHeight) {
         this.movementAngle = random(2710, 4590) / 10
 
         if(this.movementAngle > 360){
@@ -43,7 +46,7 @@ class Animal {
     }
 
     // check sides
-    if ((this.position.left < 0) || (this.position.right > this.canvas.width)){
+    if ((this.position.left < 0) || (this.position.right > this.canvasWidth)){
         this.movementAngle = 360 - this.movementAngle
     }
 
@@ -51,7 +54,7 @@ class Animal {
   }
   draw (ctx, color) {
     ctx.fillStyle = color
-    ctx.fillRect(this.position.X, this.position.Y, this.position.Width, this.position.Height)
+    ctx.fillRect(this.position.x, this.position.y, this.position.width, this.position.height)
   }
 }
 
